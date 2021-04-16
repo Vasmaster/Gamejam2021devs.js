@@ -1,0 +1,55 @@
+{
+    "name": "UIAction",
+    "maps": [
+        {
+            "name": "UI",
+            "id": "a15c983b-092c-4f56-a3bc-0b715f555ef2",
+            "actions": [
+                {
+                    "name": "ChangeCharacter",
+                    "type": "Value",
+                    "id": "195067dd-e23d-4ff3-98dd-545568a56763",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "QE",
+                    "id": "a7802484-8d23-4024-9418-8ff5bf264f59",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeCharacter",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "35017848-899b-47d4-a2ce-d3cf843c7307",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeCharacter",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "8f5375e0-ade2-4ce1-bae4-088cf6d4b471",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeCharacter",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
