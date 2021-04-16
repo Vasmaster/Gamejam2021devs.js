@@ -1,23 +1,32 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EndPoint : MonoBehaviour
 {
-    [SerializeField] private CharacterColor neededColor;
+    public CharacterColor neededColor;
     [SerializeField] private PlayerController controller;
 
-    public int colorIndex = 0;
+    private int _colorIndex = 0;
+
+    public event EventHandler<onDeliverColorEventArgs> onDeliverColor;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player") && collision.transform.Find("Body").GetComponent<SpriteRenderer>().color == neededColor.GetColor(colorIndex))
+        if(collision.gameObject.CompareTag("Player") && collision.transform.Find("Body").GetComponent<SpriteRenderer>().color == neededColor.GetColor(_colorIndex))
         {
-            colorIndex++;
+            _colorIndex++;
             controller.destroyedCharacter++;
             controller.playersInGame.Remove(collision.gameObject);
             controller.SetActiveCharacter(0);
             Destroy(collision.gameObject);
+            onDeliverColor.Invoke(this, new onDeliverColorEventArgs { index = _colorIndex });
         }
+    }
+
+    public class onDeliverColorEventArgs : EventArgs
+    {
+        public int index;
     }
 }
