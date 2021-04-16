@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43064bf2ac2291e40abfbac45c46cbb0, type: 3}
-  m_Name: Needed color
+  m_Script: {fileID: 11500000, guid: c6428fd83602d974d8bfd0a4cd8ac9ce, type: 3}
+  m_Name: Basic Color Mixer
   m_EditorClassIdentifier: 
   colors:
-  - {r: 0, g: 1, b: 0.060156345, a: 1}
-  - {r: 1, g: 0.63624465, b: 0, a: 1}
+  - inputColor1: {r: 0.98039216, g: 0.03137255, b: 0.03137255, a: 1}
+    inputColor2: {r: 0.8980392, g: 1, b: 0, a: 1}
+    outputColor: {r: 1, g: 0.63529414, b: 0, a: 1}

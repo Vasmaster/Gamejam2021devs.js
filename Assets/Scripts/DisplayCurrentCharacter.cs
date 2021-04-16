@@ -14,7 +14,7 @@ public class DisplayCurrentCharacter : MonoBehaviour
 
     void Start()
     {
-        characterImage.color = controller.colors.GetColor(0);
+        characterImage.color = controller.currentColors.GetColor(0);
         neededColor.color = endPoint.neededColor.GetColor(0);
         controller.onChangeCharacter += ControllerOnChangeCharacter;
         endPoint.onDeliverColor += EndPointOnDeliverColor;
@@ -27,6 +27,6 @@ public class DisplayCurrentCharacter : MonoBehaviour
 
     private void ControllerOnChangeCharacter(object sender, PlayerController.onChangeEventArgs e)
     {
-         characterImage.color = controller.colors.GetColor(e.index);
+         characterImage.color = controller.currentColors.GetColor(e.index);
     }
 }
