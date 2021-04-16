@@ -16,6 +16,7 @@ public class DisplayCurrentCharacter : MonoBehaviour
 
     private void ControllerOnChangeCharacter(object sender, PlayerController.onChangeEventArgs e)
     {
+        Debug.Log(e.index);
          characterImage.color = controller.colors.GetColor(e.index);
     }
 }

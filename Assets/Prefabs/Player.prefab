@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 4082262890625221924}
   - component: {fileID: 6606912657277456514}
   - component: {fileID: 6606912657277456513}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,7 +59,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1, y: 1.1}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &4082262890625221924
 Rigidbody2D:
@@ -152,7 +152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6606912658732889312}
   - component: {fileID: 6606912658732889313}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}

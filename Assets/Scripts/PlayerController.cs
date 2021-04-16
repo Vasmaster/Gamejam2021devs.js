@@ -8,13 +8,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject playerPrefab;
     public CharacterColor colors;
     [SerializeField] private Transform[] spawnPoints;
-    [HideInInspector] public List<GameObject> playersInGame;
-
-    public int characterIndex = 0;
+     public List<GameObject> playersInGame;
+     public int characterIndex = 0;
+    [HideInInspector] public int destroyedCharacter = 0;
 
     public event EventHandler<onChangeEventArgs> onChangeCharacter;
 
-    void Awake()
+    void Start()
     {
         for (int i = 0; i < spawnPoints.Length; i++)
         {
@@ -37,16 +37,17 @@ public class PlayerController : MonoBehaviour
             }
             playersInGame[i].GetComponent<PlayerMovement>().enabled = false;
         }
+        onChangeCharacter.Invoke(this, new onChangeEventArgs { index = characterIndex + destroyedCharacter});
     }
 
     public void OnChange(InputAction.CallbackContext obj)
     {
         if (obj.phase != InputActionPhase.Started) return;
         characterIndex += (int) obj.ReadValue<float>();
-        if (characterIndex >= playersInGame.Count) characterIndex = 0;
-        if (characterIndex < 0) characterIndex = playersInGame.Count - 1;
-        onChangeCharacter.Invoke(this, new onChangeEventArgs { index = characterIndex });
-        SetActiveCharacter(characterIndex);
+        if (characterIndex - destroyedCharacter >= playersInGame.Count) characterIndex = destroyedCharacter;
+        if (characterIndex - destroyedCharacter < 0) characterIndex = playersInGame.Count - 1 + destroyedCharacter;
+        
+        SetActiveCharacter(characterIndex - destroyedCharacter);
     }
 
     public class onChangeEventArgs : EventArgs
