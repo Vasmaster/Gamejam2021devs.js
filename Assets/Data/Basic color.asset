@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43064bf2ac2291e40abfbac45c46cbb0, type: 3}
   m_Name: Basic color
   m_EditorClassIdentifier: 
-  color1: {r: 0, g: 0, b: 0, a: 0}
-  color2: {r: 0, g: 0, b: 0, a: 0}
-  color3: {r: 0, g: 0, b: 0, a: 0}
-  color4: {r: 0, g: 0, b: 0, a: 0}
-  color5: {r: 0, g: 0, b: 0, a: 0}
-  color6: {r: 0, g: 0, b: 0, a: 0}
-  color7: {r: 0, g: 0, b: 0, a: 0}
+  colors:
+  - {r: 0.9811321, g: 0.032395888, b: 0.032395888, a: 1}
+  - {r: 1, g: 0.63624465, b: 0, a: 1}
+  - {r: 0.89986145, g: 1, b: 0, a: 1}
+  - {r: 0, g: 1, b: 0.060156345, a: 1}
+  - {r: 0, g: 0.017729795, b: 0.9433962, a: 1}
+  - {r: 0.63501143, g: 0.051886797, b: 1, a: 1}
+  - {r: 0.9344395, g: 0.0047169924, b: 1, a: 1}

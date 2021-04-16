@@ -1,7 +1,6 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Animations;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
@@ -12,6 +11,8 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public List<GameObject> playersInGame;
 
     public int characterIndex = 0;
+
+    public event EventHandler<onChangeEventArgs> onChangeCharacter;
 
     void Awake()
     {
@@ -44,6 +45,12 @@ public class PlayerController : MonoBehaviour
         characterIndex += (int) obj.ReadValue<float>();
         if (characterIndex >= playersInGame.Count) characterIndex = 0;
         if (characterIndex < 0) characterIndex = playersInGame.Count - 1;
+        onChangeCharacter.Invoke(this, new onChangeEventArgs { index = characterIndex });
         SetActiveCharacter(characterIndex);
+    }
+
+    public class onChangeEventArgs : EventArgs
+    {
+        public int index;
     }
 }
