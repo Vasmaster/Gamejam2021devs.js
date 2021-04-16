@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private GameObject playerPrefab;
-    [SerializeField] private CharacterColor colors;
+    public CharacterColor colors;
     [SerializeField] private Transform[] spawnPoints;
     [HideInInspector] public List<GameObject> playersInGame;
 
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
         for (int i = 0; i < spawnPoints.Length; i++)
         {
             GameObject player = Instantiate(playerPrefab, spawnPoints[i].position, Quaternion.identity);
-            player.transform.Find("Body").GetComponent<SpriteRenderer>().color = colors.colors[i];
+            player.transform.Find("Body").GetComponent<SpriteRenderer>().color = colors.GetColor(i);
             playersInGame.Add(player);
         }
         SetActiveCharacter(characterIndex);
