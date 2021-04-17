@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public CharacterColor currentColors;
     [SerializeField] private Transform[] spawnPoints;
      public List<GameObject> playersInGame;
-     public int characterIndex = 0;
+     //public int characterIndex = 0;
 
     public event EventHandler<onChangeEventArgs> onChangeCharacter;
 
@@ -24,32 +24,32 @@ public class PlayerController : MonoBehaviour
             playersInGame.Add(player);
             currentColors.AddColor(colors.GetColor(i));
         }
-        SetActiveCharacter(characterIndex);
+        //SetActiveCharacter(characterIndex);
     }
 
 
     public void SetActiveCharacter(int index)
     {
-        for (int i = 0; i < playersInGame.Count; i++)
-        {
-            if (i == index)
-            {
-                playersInGame[i].GetComponent<PlayerMovement>().enabled = true;
-                continue;
-            }
-            playersInGame[i].GetComponent<PlayerMovement>().enabled = false;
-        }
-        onChangeCharacter?.Invoke(this, new onChangeEventArgs { index = characterIndex});
+        //for (int i = 0; i < playersInGame.Count; i++)
+        //{
+        //    if (i == index)
+        //    {
+        //        playersInGame[i].GetComponent<PlayerMovement>().enabled = true;
+        //        continue;
+        //    }
+        //    playersInGame[i].GetComponent<PlayerMovement>().enabled = false;
+        //}
+        //onChangeCharacter?.Invoke(this, new onChangeEventArgs { index = characterIndex});
     }
 
     public void OnChange(InputAction.CallbackContext obj)
     {
-        if (obj.phase != InputActionPhase.Started) return;
-        characterIndex += (int) obj.ReadValue<float>();
-        if (characterIndex >= playersInGame.Count) characterIndex = 0;
-        if (characterIndex < 0) characterIndex = playersInGame.Count - 1;
+        //if (obj.phase != InputActionPhase.Started) return;
+        //characterIndex += (int) obj.ReadValue<float>();
+        //if (characterIndex >= playersInGame.Count) characterIndex = 0;
+        //if (characterIndex < 0) characterIndex = playersInGame.Count - 1;
         
-        SetActiveCharacter(characterIndex);
+        //SetActiveCharacter(characterIndex);
     }
 
     public class onChangeEventArgs : EventArgs

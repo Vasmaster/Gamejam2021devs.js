@@ -18,7 +18,7 @@ public class EndPoint : MonoBehaviour
         {
             controller.currentColors.RemoveColor(neededColor.GetColor(_colorIndex));
             controller.playersInGame.Remove(collision.gameObject);
-            controller.characterIndex = 0;
+            //controller.characterIndex = 0;
             controller.SetActiveCharacter(0);
             Destroy(collision.gameObject);
             _colorIndex++;

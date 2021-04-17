@@ -24,7 +24,7 @@ public class ColorMixer : MonoBehaviour
                 _firstSet = true;
                 controller.playersInGame.Remove(collision.gameObject);
                 controller.currentColors.RemoveColor(_firstColor);
-                controller.characterIndex = 0;
+                //controller.characterIndex = 0;
                 controller.SetActiveCharacter(0);
                 Destroy(collision.gameObject);
             }
