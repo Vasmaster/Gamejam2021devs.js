@@ -873,6 +873,9 @@ MonoBehaviour:
   frontPlayer: {fileID: 1736367695}
   sidePlayer: {fileID: 300553443}
   speed: 1200
+  maxSize: 1.5
+  minSize: 0.5
+  growingSpeed: 0.002
 --- !u!114 &1309888584
 MonoBehaviour:
   m_ObjectHideFlags: 0
