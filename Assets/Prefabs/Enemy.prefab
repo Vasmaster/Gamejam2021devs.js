@@ -153,7 +153,7 @@ MonoBehaviour:
   sideEnemy: {fileID: 8891780167423036040}
   maxSize: 1
   minSize: 0.1
-  fallSpeed: 0.01
+  fallSpeed: 0.04
   growSpeed: 0.0005
 --- !u!1 &8891780168489017876
 GameObject:
